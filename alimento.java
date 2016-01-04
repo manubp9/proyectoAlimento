@@ -103,4 +103,16 @@ public class alimento
             }
         }
     }
+    /**
+     * nos da la informacion nutricional del alimento
+     */
+    public void muestraDatos()
+    {
+        System.out.println("Nombre:                             "+nombre);
+        System.out.println("Proteinas por cada 100 gramos:      "+proteinas);
+        System.out.println("Carbohidratos por cada 100 gramos:  "+carbohidratos);
+        System.out.println("Grasas por cada 100 gramos:         "+grasas);
+        System.out.println("Calorias:                           "+calorias);     
+        mayorComp();
+    }
 }    
