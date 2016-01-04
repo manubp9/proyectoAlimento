@@ -54,4 +54,53 @@ public class alimento
         this.grasas = grasas;
         calorias = (proteinas*4 )+ (carbohidratos*4)+(grasas*9);
     }
+     /**
+     * compara que nutriente es el mayor o mayores
+     */
+    public void mayorComp()
+    {
+        if ((proteinas == carbohidratos) && (proteinas == grasas))
+        {
+            System.out.println("Componente/s mayoritario/s:         proteinas, carbohidratos y grasas");
+        }
+        else 
+        {
+            if (proteinas == carbohidratos && carbohidratos > grasas)
+            {
+                System.out.println("Componente/s mayoritario/s:         proteinas y carbohidratos");
+            }
+            else 
+            {
+                if (proteinas == grasas && grasas > carbohidratos)
+                {
+                    System.out.println("Componente/s mayoritario/s:         proteinas y grasas");
+                }
+                else 
+                {
+                    if ( carbohidratos == grasas && grasas > proteinas)
+                    {
+                        System.out.println("Componente/s mayoritario/s:         carbohidratos y grasas");
+                    }
+                    else 
+                    {
+                        if (proteinas > carbohidratos && proteinas > grasas)
+                        {
+                            System.out.println("Componente/s mayoritario/s:         proteinas");
+                        }
+                        else 
+                        {
+                            if (carbohidratos > proteinas && carbohidratos > grasas)
+                            {
+                                System.out.println("Componente/s mayoritario/s:         carbohidratos");
+                            }
+                            else 
+                            {
+                                System.out.println("Componente/s mayoritario/s:         grasas");
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }    
