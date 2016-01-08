@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=nombre
+comment0.target=usuario(java.lang.String)
+comment0.text=\r\n\ inicializa\ el\ nombre\ del\ usuario\ y\ la\ cantidad\ de\ alimento\ con\ sus\ nutrientes\r\n
+comment1.params=alimentoQueCome\ gramosDeAlimento
+comment1.target=void\ comer(alimento,\ float)
+comment1.text=\r\n\ Metodo\ que\ da\ de\ comer\ al\ usuario\ alimentos\r\n
+comment2.params=
+comment2.target=void\ mostrarDatos()
+comment2.text=\r\n\ metodo\ que\ muestra\ los\ datos\ completos\ de\ todos\ los\ atributos\ del\ alimento\ que\ ha\ comido\r\n
+numComments=3

@@ -115,4 +115,33 @@ public class alimento
         System.out.println("Calorias:                           "+calorias);     
         mayorComp();
     }
+    /**
+     * nos da la informacion proteica
+     */
+    public float verProteinas()
+    {
+        return proteinas;
+    }
+    /**
+     * nos da la informacion carbohidraica
+     */
+    public float verCarbohidratos()
+    {
+        return carbohidratos;
+    }
+    /**
+     * nos da la informacion de la grasa
+     */
+    public float verGrasas()
+    {
+        return grasas;
+    }
+     /**
+     * nos da la informacion calorica
+     */
+    public float verCalorias()
+    {
+        return calorias;
+    }
+    
 }    
