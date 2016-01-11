@@ -10,8 +10,8 @@ Al crear un objeto Usuario se proporciona únicamente el nombre completo de dich
 Los usuarios deben ser capaces de comer una cantidad variable de un alimento medida en gramos. 
 Por ejemplo, si creamos un usuario llamado “Juan Alonso García”, 
 este debe ser capaz de comer 350,5 gramos de pollo o 200,75 gramos de pollo o 150,2 gramos de acelgas o 75,3 gramos
- de acelgas, etc. El método para ello se denomina comer y debe recibir dos parámetros: el alimento a comer 
- y la cantidad en gramos del mismo que se va a comer el usuario (en ese orden).
+de acelgas, etc. El método para ello se denomina comer y debe recibir dos parámetros: el alimento a comer 
+y la cantidad en gramos del mismo que se va a comer el usuario (en ese orden).
 
 Finalmente, debemos ser capaces de mostrar el estado actual de un usuario por pantalla a través de un método llamado mostrarDatos.
 Esto incluye el nombre del usuario, los gramos totales de proteínas, carbohidratos y grasas ingeridos y la cantidad total de calorías ingeridas hasta el momento.
@@ -31,6 +31,18 @@ Gramos totales de carbohidratos ingeridos: 0.0
 Gramos totales de grasas ingeridos:        26.0 
 Calorias totales ingeridas:                434.0
 Cuando termines sube el proyecto a Github e indica la URL del último commit.
+
+--A partir del código terminado de la actividad 0291, 
+--codifica el código necesario para poder comparar la ingesta de calorías entre dos usuarios. 
+--Para ello debemos invocar un método sobre el primer usuario a comparar e indicar 
+--como parámetro de este método el segundo usuario. Por pantalla se debe mostrar quién ha consumido 
+--más calorías hasta el momento.
+
+Un ejemplo de visualización por pantalla de esta comparación sería:
+
+--Pepe Alonso García ha consumido más calorias que María Fernández Prieto (544 frente a 36).
+Realiza un commit cuando la funcionalidad esté correctamente implementada, 
+súbelo a Github e indica la URL del último commit.
  */
 public class usuario
 {
@@ -65,6 +77,7 @@ public class usuario
         caloriasTotales = caloriasTotales + alimentoQueCome.verCalorias()*(gramosDeAlimento/100);
         gramosTotales = gramosTotales + gramosDeAlimento;
     }
+
     /**
      * metodo que muestra los datos completos de todos los atributos del alimento que ha comido
      */
@@ -75,5 +88,41 @@ public class usuario
         System.out.println("Gramos totales de carbohidratos ingeridos:  "+carbohidratosTotales);
         System.out.println("Gramos totales de grasas ingeridos:         "+grasasTotales);
         System.out.println("Calorias totales ingeridas:                 "+caloriasTotales);
+    }
+
+    /**
+     * metodo para comparar la ingesta de calorias entre dos usuarios
+     */
+    public void compararCalorias(usuario usuarioAComparar)
+    {
+        if (caloriasTotales == usuarioAComparar.getCalorias())
+        {
+            System.out.println( usuarioAComparar.getNombre()+" ha consumido las mismas calorias que "+nombre+"("+ usuarioAComparar.getCalorias()+ "frente a "+caloriasTotales+")");
+        }
+        else if(caloriasTotales < usuarioAComparar.getCalorias())
+        {
+            System.out.println( usuarioAComparar.getNombre()+" ha consumido mas calorias que "+nombre+"("+ usuarioAComparar.getCalorias()+ "frente a "+caloriasTotales+")");
+        }
+        else 
+        {
+            System.out.println(nombre+" ha consumido mas calorias que "+usuarioAComparar.getNombre()+"("+caloriasTotales+ "frente a "+ usuarioAComparar.getCalorias()+")");
+        }
+
+    }
+
+    /**
+     * devuelve el nombre del usuario
+     */
+    public String getNombre()
+    {
+        return nombre;
+    }
+
+    /**
+     * devuelve el numero de calorias
+     */
+    public float getCalorias()
+    {
+        return caloriasTotales;
     }
 }
