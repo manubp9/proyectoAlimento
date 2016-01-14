@@ -56,7 +56,7 @@ public class usuario
     private float masCalorico;
     private float alimentosComidos;
     private alimento alimentoc;
-    
+
     /**
      * inicializa el nombre del usuario y la cantidad de alimento con sus nutrientes
      */
@@ -85,11 +85,18 @@ public class usuario
         caloriasTotales = caloriasTotales + alimentoQueCome.verCalorias()*(gramosDeAlimento/100);
         gramosTotales = gramosTotales + gramosDeAlimento;
         alimentosComidos = +1;
-        if (alimentoc.verCalorias()<=alimentoQueCome.verCalorias())
+        if(alimentoc != null){
+            if (alimentoc.verCalorias()<= alimentoQueCome.verCalorias())
+            {
+                alimentoc=alimentoQueCome;
+            }
+        }else
         {
-            alimentoc=alimentoQueCome;
+            alimentoc =alimentoQueCome;
         }
+
     }
+
     /**
      * imprime el alimento mas calorico ingerido
      */
@@ -100,8 +107,8 @@ public class usuario
             System.out.println("No se ha ingerido ningun alimento");
         }
         else {System.out.println("Alimento más calórico ingerido por este usuario hasta el momento: "+alimentoc.getNombre()+ "("+alimentoc.verCalorias()+" calorias por cada 100 gramos");
-                
-    }}
+
+        }}
 
     /**
      * metodo que muestra los datos completos de todos los atributos del alimento que ha comido
@@ -151,4 +158,3 @@ public class usuario
         return caloriasTotales;
     }
 }
-   
