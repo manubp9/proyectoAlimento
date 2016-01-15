@@ -147,10 +147,11 @@ public class usuario
      * en caso afirmativo, cuántas veces lo ha hecho.
      */
     public void comprobarAlimento(String nombreDeAlimento)
-    { int contador = 0;
-        for ( Alimento alimentoComprobado : listaDeAlimentos )//
+    { 
+        int contador = 0;
+        for ( Alimento alimentoComprobado : listaDeAlimentos )//crea alimentocomprobado en lista de alimentos 
         {
-            if ( alimentoComprobado.getNombre().contains(nombreDeAlimento))
+            if ( alimentoComprobado.getNombre().contains(nombreDeAlimento))//alimentoComprobdo obtiene el nombre del alimento de la lista y lo compara al que le metemos por parametro
             {
                 contador ++;
                           
@@ -170,6 +171,15 @@ public class usuario
         {
             System.out.println("El alimento "+nombreDeAlimento+" no se ha comido todavia");
         }
+    }
+    /**
+     *  consigue implementar un método que invocándolo sin parámetros nos informe de los nombres de 
+     *  aquellos alimentos que el usuario ha consumido más de una vez, en caso de que los haya.
+     *  En caso de que no haya alimentos repetidos debe informar de dicha situación.
+     */
+    public void alimentosIngeridosRepetidos()
+    {
+        
     }
 }
 
