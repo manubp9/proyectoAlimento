@@ -44,6 +44,8 @@ Un ejemplo de visualización por pantalla de esta comparación sería:
 Realiza un commit cuando la funcionalidad esté correctamente implementada, 
 súbelo a Github e indica la URL del último commit.
  */
+import java.util.ArrayList;
+
 public class usuario
 {
     // instance variables - replace the example below with your own
@@ -55,7 +57,8 @@ public class usuario
     private float caloriasTotales;
     private float masCalorico;
     private float alimentosComidos;
-    private alimento alimentoc;
+    private Alimento alimentoc;//en este atributo guarda el alimento mas calorico ingerido hasta el momento
+    private ArrayList<Alimento> listaDeAlimentos;//este atributo guarda en una lista los alimentos ingeridos
 
     /**
      * inicializa el nombre del usuario y la cantidad de alimento con sus nutrientes
@@ -71,29 +74,31 @@ public class usuario
         masCalorico = 0;
         alimentosComidos = 0;
         alimentoc = null;
+        listaDeAlimentos = new ArrayList<Alimento>();
 
     }
 
     /**
      * Metodo que da de comer al usuario alimentos
      */
-    public void comer(alimento alimentoQueCome,float gramosDeAlimento)
+    public void comer(Alimento alimentoQueCome,float gramosDeAlimento)
     { 
         proteinasTotales = proteinasTotales + alimentoQueCome.verProteinas()*(gramosDeAlimento/100);
         carbohidratosTotales = carbohidratosTotales+alimentoQueCome.verCarbohidratos()*(gramosDeAlimento/100);
         grasasTotales = grasasTotales + alimentoQueCome.verGrasas()*(gramosDeAlimento/100);
         caloriasTotales = caloriasTotales + alimentoQueCome.verCalorias()*(gramosDeAlimento/100);
         gramosTotales = gramosTotales + gramosDeAlimento;
-        alimentosComidos = +1;
+        alimentosComidos =+ 1;
         if(alimentoc != null){
             if (alimentoc.verCalorias()<= alimentoQueCome.verCalorias())
             {
-                alimentoc=alimentoQueCome;
+                alimentoc = alimentoQueCome;
             }
         }else
         {
             alimentoc =alimentoQueCome;
         }
+        listaDeAlimentos.add(alimentoQueCome);
 
     }
 
@@ -107,8 +112,8 @@ public class usuario
             System.out.println("No se ha ingerido ningun alimento");
         }
         else {System.out.println("Alimento más calórico ingerido por este usuario hasta el momento: "+alimentoc.getNombre()+ "("+alimentoc.verCalorias()+" calorias por cada 100 gramos");
-
-        }}
+        }
+    }
 
     /**
      * metodo que muestra los datos completos de todos los atributos del alimento que ha comido
@@ -156,5 +161,21 @@ public class usuario
     public float getCalorias()
     {
         return caloriasTotales;
+    }
+    /**
+     * 
+     */
+    public void seleccionarAlimentoConsumido(int lugar)
+    {
+        if (( lugar > 0) && (lugar <= listaDeAlimentos.size()))
+        {
+            int index = lugar - 1 ;
+            Alimento alimentoSeleccionado = listaDeAlimentos.get(index);
+            alimentoSeleccionado.muestraDatos();
+        }
+        else 
+        {
+            System.out.println("El numero introducido no esta en la lista");
+        }
     }
 }

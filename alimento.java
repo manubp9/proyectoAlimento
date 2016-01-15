@@ -1,4 +1,4 @@
-/**
+ /**
  * 
  * Se desea realizar una aplicación destinada a personas que están a dieta y que necesitan contar la calorías 
  * y los macronutrientes de los alimentos que ingieren.
@@ -34,7 +34,7 @@
  *      Componente/s mayoritario/s:        Proteinas
  *      Sube el proyecto a GitHub e indica la URL del último commit.
  */
-public class alimento
+public class Alimento
 {
     // instance variables - replace the example below with your own
     private String nombre;
@@ -46,7 +46,7 @@ public class alimento
     /**
      * Constructor for objects of class alimento
      */
-    public alimento(String nombre,float proteinas,float carbohidratos,float grasas)
+    public Alimento(String nombre,float proteinas,float carbohidratos,float grasas)
     {
         this.nombre = nombre;
         this.proteinas = proteinas;
