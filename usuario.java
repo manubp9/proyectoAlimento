@@ -156,11 +156,17 @@ public class usuario
                           
             }
         }
-        if (contador >=1)
+        if (contador >1)
         {
-         System.out.println("el alimento "+ nombreDeAlimento+" se ha comido "+contador+" vez/veces" );
+         System.out.println("el alimento "+ nombreDeAlimento+" se ha comido "+contador+" veces" );
         }
         else 
+        if (contador == 1 )
+        {
+             System.out.println("el alimento "+ nombreDeAlimento+" se ha comido "+contador+" vez" );
+            
+        }
+        else
         {
             System.out.println("El alimento "+nombreDeAlimento+" no se ha comido todavia");
         }
