@@ -74,7 +74,7 @@ public class usuario
         masCalorico = 0;
         alimentosComidos = 0;
         alimentoc = null;
-        listaDeAlimentos = new ArrayList<Alimento>();
+        listaDeAlimentos = new ArrayList<Alimento>();//crea un objeto lista de alimentos de tipo alimento
 
     }
 
@@ -98,7 +98,7 @@ public class usuario
         {
             alimentoc =alimentoQueCome;
         }
-        listaDeAlimentos.add(alimentoQueCome);
+        listaDeAlimentos.add(alimentoQueCome);//añade el alimento que come a la lista de alimentos.
 
     }
 
@@ -163,13 +163,13 @@ public class usuario
         return caloriasTotales;
     }
     /**
-     * 
+     * muestra los valores del alimento que escojas introduciendo el numero que ocupa por orden.
      */
     public void seleccionarAlimentoConsumido(int lugar)
     {
         if (( lugar > 0) && (lugar <= listaDeAlimentos.size()))
         {
-            int index = lugar - 1 ;
+            int index = lugar - 1 ;//variable local 
             Alimento alimentoSeleccionado = listaDeAlimentos.get(index);
             alimentoSeleccionado.muestraDatos();
         }

@@ -22,5 +22,5 @@ comment6.target=float\ getCalorias()
 comment6.text=\r\n\ devuelve\ el\ numero\ de\ calorias\r\n
 comment7.params=lugar
 comment7.target=void\ seleccionarAlimentoConsumido(int)
-comment7.text=\r\n\ \r\n
+comment7.text=\r\n\ muestra\ los\ valores\ del\ alimento\ que\ escojas\ introduciendo\ el\ numero\ que\ ocupa\ por\ orden.\r\n
 numComments=8
