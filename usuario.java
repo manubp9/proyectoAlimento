@@ -4,45 +4,6 @@
  * A partir del código final de la actividad 0289, crea una nueva clase llamada Usuario 
  * y codifica el código necesario para poder crear objetos de la clase Usuario. 
  * Estos objetos de tipo Usuario representan a personas que usan nuestra aplicación.
-
-Al crear un objeto Usuario se proporciona únicamente el nombre completo de dicho usuario.
-
-Los usuarios deben ser capaces de comer una cantidad variable de un alimento medida en gramos. 
-Por ejemplo, si creamos un usuario llamado “Juan Alonso García”, 
-este debe ser capaz de comer 350,5 gramos de pollo o 200,75 gramos de pollo o 150,2 gramos de acelgas o 75,3 gramos
-de acelgas, etc. El método para ello se denomina comer y debe recibir dos parámetros: el alimento a comer 
-y la cantidad en gramos del mismo que se va a comer el usuario (en ese orden).
-
-Finalmente, debemos ser capaces de mostrar el estado actual de un usuario por pantalla a través de un método llamado mostrarDatos.
-Esto incluye el nombre del usuario, los gramos totales de proteínas, carbohidratos y grasas ingeridos y la cantidad total de calorías ingeridas hasta el momento.
-
-Un ejemplo de visualización por pantalla de estos datos, recién creado el usuario, es:
-
-Nombre:                                    Juan Alonso García
-Gramos totales de proteinas ingeridos:     0.0
-Gramos totales de carbohidratos ingeridos: 0.0
-Gramos totales de grasas ingeridos:        0.0
-Calorias totales ingeridas:                0.0
-Otro ejemplo, ya habiendo comido 200 gramos de pollo, sería:
-
-Nombre:                                    Juan Alonso García
-Gramos totales de proteinas ingeridos:     50.0 
-Gramos totales de carbohidratos ingeridos: 0.0 
-Gramos totales de grasas ingeridos:        26.0 
-Calorias totales ingeridas:                434.0
-Cuando termines sube el proyecto a Github e indica la URL del último commit.
-
---A partir del código terminado de la actividad 0291, 
---codifica el código necesario para poder comparar la ingesta de calorías entre dos usuarios. 
---Para ello debemos invocar un método sobre el primer usuario a comparar e indicar 
---como parámetro de este método el segundo usuario. Por pantalla se debe mostrar quién ha consumido 
---más calorías hasta el momento.
-
-Un ejemplo de visualización por pantalla de esta comparación sería:
-
---Pepe Alonso García ha consumido más calorias que María Fernández Prieto (544 frente a 36).
-Realiza un commit cuando la funcionalidad esté correctamente implementada, 
-súbelo a Github e indica la URL del último commit.
  */
 import java.util.ArrayList;
 
@@ -162,14 +123,15 @@ public class usuario
     {
         return caloriasTotales;
     }
+
     /**
      * muestra los valores del alimento que escojas introduciendo el numero que ocupa por orden.
      */
     public void seleccionarAlimentoConsumido(int lugar)
     {
-        if (( lugar > 0) && (lugar <= listaDeAlimentos.size()))
+        if (( lugar >0) && (lugar <= listaDeAlimentos.size()))
         {
-            int index = lugar - 1 ;//variable local 
+            int index = lugar - 1 ;//variable local indice
             Alimento alimentoSeleccionado = listaDeAlimentos.get(index);
             alimentoSeleccionado.muestraDatos();
         }
@@ -178,4 +140,30 @@ public class usuario
             System.out.println("El numero introducido no esta en la lista");
         }
     }
+
+    /**
+     * metodo que permita pasar como parámetro el nombre de un alimento ,
+     * indique si el usuario ha comido ese alimento más de una vez o no y, 
+     * en caso afirmativo, cuántas veces lo ha hecho.
+     */
+    public void comprobarAlimento(String nombreDeAlimento)
+    { int contador = 0;
+        for ( Alimento alimentoComprobado : listaDeAlimentos )//
+        {
+            if ( alimentoComprobado.getNombre().contains(nombreDeAlimento))
+            {
+                contador ++;
+                          
+            }
+        }
+        if (contador >=1)
+        {
+         System.out.println("el alimento "+ nombreDeAlimento+" se ha comido "+contador+" vez/veces" );
+        }
+        else 
+        {
+            System.out.println("El alimento "+nombreDeAlimento+" no se ha comido todavia");
+        }
+    }
 }
+
